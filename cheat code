@@ -1,0 +1,60 @@
+🐼 Pandas Cheat Sheet
+🔹 1. Importing & Creating
+import pandas as pd
+# Create DataFrame from dictionary
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob'],
+    'Age': [25, 30]
+})
+
+# Load CSV
+df = pd.read_csv("filename.csv")
+
+# Create empty DataFrame
+df = pd.DataFrame()
+  
+🔹 2. Basic Inspection
+df.head()         # First 5 rows
+df.tail()         # Last 5 rows
+df.shape          # (rows, columns)
+df.info()         # Summary
+df.describe()     # Stats summary
+df.columns        # Column names
+df.dtypes         # Data types
+
+🔹 3. Selecting Data
+df['col']               # Single column
+df[['col1', 'col2']]    # Multiple columns
+df.iloc[0]              # First row
+df.iloc[:, 0]           # First column
+df.loc[0, 'col']        # Specific cell
+df[df['col'] > 10]      # Conditional filter
+
+🔹 4. Modifying Data
+df['new'] = df['Age'] + 5           # Add column
+df.rename(columns={'old': 'new'})   # Rename columns
+df.drop('col', axis=1)              # Drop column
+df.drop(index=0)                    # Drop row
+
+🔹 5. Handling Missing Data
+df.isnull().sum()         # Count NaNs
+df.dropna()               # Drop NaN rows
+df.fillna(0)              # Fill with value
+
+🔹 6. Sorting & Grouping
+df.sort_values(by='Age')              # Sort by column
+df.groupby('col').mean()              # Group by column
+df['col'].value_counts()              # Frequency count
+
+🔹 7. Merging & Concatenation
+pd.concat([df1, df2])                 # Stack vertically
+pd.merge(df1, df2, on='key')          # Merge on key
+
+🔹 8. Exporting Data
+df.to_csv("newfile.csv", index=False)
+
+🔹 9. Useful Shortcuts
+df.sample(5)               # Random 5 rows
+df.nunique()               # Unique values per column
+df.duplicated()            # Find duplicates
+df['col'].astype(int)      # Convert type

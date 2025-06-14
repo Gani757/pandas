@@ -13,7 +13,7 @@ df = pd.read_csv("filename.csv")
 # Create empty DataFrame
 df = pd.DataFrame()
   
-🔹 2. Basic Inspection
+🔹 2. Basic Exploration / Inspection
 df.head()         # First 5 rows
 df.tail()         # Last 5 rows
 df.shape          # (rows, columns)

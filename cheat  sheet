@@ -16,9 +16,9 @@ df = pd.DataFrame()
 🔹 2. Basic Exploration / Inspection
 df.head()         # First 5 rows
 df.tail()         # Last 5 rows
-df.shape          # (rows, columns)
 df.info()         # Summary
 df.describe()     # Stats summary
+df.shape          # (rows, columns)
 df.columns        # Column names
 df.dtypes         # Data types
 

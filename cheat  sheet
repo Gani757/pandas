@@ -1,6 +1,7 @@
 🐼 Pandas Cheat Sheet
 🔹 1. Importing & Creating
 import pandas as pd
+
 # Create DataFrame from dictionary
 df = pd.DataFrame({
     'Name': ['Alice', 'Bob'],
@@ -47,14 +48,19 @@ df.groupby('col').mean()              # Group by column
 df['col'].value_counts()              # Frequency count
 
 🔹 7. Merging & Concatenation
-pd.concat([df1, df2])                 # Stack vertically
-pd.merge(df1, df2, on='key')          # Merge on key
+pd.concat([df1, df2],axis=1)                     # Stack vertically
+pd.merge(df1, df2, on='key',how="left")          # Merge on key, how =inner /left /right / outer joins
 
 🔹 8. Exporting Data
 df.to_csv("newfile.csv", index=False)
 
 🔹 9. Useful Shortcuts
 df.sample(5)               # Random 5 rows
-df.nunique()               # Unique values per column
 df.duplicated()            # Find duplicates
 df['col'].astype(int)      # Convert type
+df["Age"].unique()       # Unique values
+df["Age"].nunique()      # Count unique
+df["Age"].value_counts() # Frequency count
+df.drop("Age", axis=1)   # Drop column
+df.rename(columns={"Age":"Years"})
+
